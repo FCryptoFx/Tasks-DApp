@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "@truffle/contract": "^4.6.16",
     "bootstrap": "^5.2.3",
+    "i": "^0.3.7",
     "lite-server": "^2.6.1"
   },
   "name": "truffleproyects",
@@ -9,7 +11,6 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
   "scripts": {
     "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
