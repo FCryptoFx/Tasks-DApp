@@ -27,15 +27,27 @@ contract("TasksContract", () => {
         assert.equal(taskCounter, 1);
     })
 
+    //Testeamos que la tarea se crea correctamente
     it("task created successfully", async () => {
         const result = await this.tasksContract.createTask("some task", "description two");
         const taskEvent = result.logs[0].args;
         const taskCounter = await this.tasksContract.taskCounter();
 
-        assert.equal(taskCounter)
-        assert.equal(taskEvent.id.toNumber(), 2);
-        assert.equal(taskEvent.title, "some task");
-        assert.equal(taskEvent.description, "description two");
-        assert.equal(taskEvent.done, false);
+        assert.equal(taskCounter, 2)
+        assert.equal(taskEvent.id.toNumber(), 2); // Comprobamos que el id del task Event sea 2
+        assert.equal(taskEvent.title, "some task"); // Comprobamos que el título sea igual al estipulado en la variable result
+        assert.equal(taskEvent.description, "description two"); // COmprobamos que la descripcion sea igual al estipulado en la variable result
+        assert.equal(taskEvent.done, false); // Comprobamos que al crear la tarea el atributo "done" se inicialize en false.
+    })
+
+    //Testeamos que la tarea cambie el estado de la variable "done"
+    it("task toggle done", async () => {
+        const result = await this.tasksContract.toggleDone(1);
+        const taskEvent = result.logs[0].args;
+        const task = await this.tasksContract.tasks(1);
+
+        assert.equal(task.done, true);
+        assert.equal(taskEvent.done, true);
+        assert.equal(taskEvent.id, 1);
     })
 })
