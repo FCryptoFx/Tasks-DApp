@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "lite-server": "^2.6.1"
+  },
+  "name": "truffleproyects",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FCryptoFx/Tasks-DApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FCryptoFx/Tasks-DApp/issues"
+  },
+  "homepage": "https://github.com/FCryptoFx/Tasks-DApp#readme",
+  "description": ""
+}
