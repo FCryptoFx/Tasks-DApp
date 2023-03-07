@@ -6,6 +6,10 @@ contract TasksContract{
 
     uint public taskCounter = 0;
 
+    constructor(){
+        createTask("Mi primera tarea de ejemplo", "Tengo que hacer algo");
+    }
+
     struct Task{
         uint id;
         string title;
@@ -17,10 +21,15 @@ contract TasksContract{
     mapping (uint => Task) public tasks;
 
     function createTask(string memory _title, string memory _description) public {
+
         tasks[taskCounter] = Task(taskCounter, _title, _description, false, block.timestamp);
         taskCounter ++;
     }
 
-    //function toggleDone () {} 
+    function toggleDone (uint _id) public {
 
+        Task memory _task = tasks[_id];
+        _task.done = !_task.done;
+        tasks[_id] = _task;
+    } 
 }
