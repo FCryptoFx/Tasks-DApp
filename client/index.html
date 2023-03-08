@@ -7,36 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./main.css">
+    <!-- Google icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-    <title>DApp Tasks</title>
+    <title>Tasks APP | DApp</title>
 </head>
 
 <body>
     <div class="container py-5">
         <div class="row">
             <div class="col-md-4">
-                <div class="card card-body mb-4 bg-dark">
-                    <h1>Tasks DApp</h1>
-                    <h6 class="text-muted"> Descentralized Task App</h6>
-                    <span>Wallet</span>
-                    <span id="account"></span>
+                <div class="card card-body mb-4 bg-secondary.bg-gradient text-black">
+                    <h1>
+                        <span class="material-icons"> grid_view </span>
+                        Tasks DApp
+                    </h1>
+                    <h6 class="text-muted">Decentralize Tasks App</h6>
+                <div class="d-flex align-items-center">
+                    <span class="material-icons"> account_balance_wallet </span>
+                    <span class="ms-2">Wallet</span>
                 </div>
+                <span id="account"></span>
+            </div>
 
-                <form class="card card-body bg-dark" id="taskForm">
-                    <h4>Save a Tasks</h4>
+                <form class="card card-body bg-secondary.bg-gradient text-black" id="taskForm">
+                    <h4>Create a Tasks</h4>
 
                     <input type="text" name="title" placeholder="Write a Task" class="form-control bg-dark text-white my-3">
 
                     <textarea rows="2" name="description" class="form-control bg-dark text-white" placeholder="I have to..."></textarea>
 
-                    <button class="btn btn-primary my-1">SAVE TASK</button>
+                    <button class="btn btn-secondary my-1">SAVE TASK</button>
                 </form>
-
             </div>
+
             <div class="col-md-8">
-                <div id="tasksList">
-                    Tasks List
-                </div>
+                <div id="tasksList">Tasks List</div>
             </div>
         </div>
     </div>
@@ -46,5 +55,4 @@
     <script src="./app.js"></script>
     <script src="./UI.js"></script>
 </body>
-
 </html>
